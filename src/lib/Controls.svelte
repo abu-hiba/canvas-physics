@@ -73,6 +73,10 @@
 <style>
 .controls {
     padding: 2rem 1rem;
+    margin-right: 1rem;
+    background-color: #ddd;
+    border-radius: 0.5rem;
+    font-family: Trebuchet, sans-serif;
   }
 
  .buttons {
