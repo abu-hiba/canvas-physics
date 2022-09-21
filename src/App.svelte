@@ -8,9 +8,9 @@
     minRadius,
     numCircles,
     disableCollisions,
-  } from "./store";
-  import Circle from "./circle";
-  import Controls from "./Controls.svelte";
+  } from "./lib/store";
+  import Circle from "./lib/circle";
+  import Controls from "./lib/Controls.svelte";
 
   let canvas: HTMLCanvasElement;
   let isRunning = false;

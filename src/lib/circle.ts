@@ -1,4 +1,4 @@
-import Physics from "./physics";
+import Physics from './physics';
 
 namespace Circle {
   export type Circle = {
@@ -19,7 +19,7 @@ namespace Circle {
     position,
     radius,
     velocity = { x: 0, y: 0 },
-    colour = "rgba(29, 0, 255, 0.5)"
+    colour = 'rgba(29, 0, 255, 0.5)'
   ) => ({
     position,
     radius,
@@ -73,7 +73,7 @@ namespace Circle {
 
     return Physics.vectorSubtract(
       c1.velocity,
-      Physics.vectorXScalar(normOfCentres, p * c1.mass)
+      Physics.vectorXScalar(normOfCentres, p * c2.mass)
     );
   };
 
@@ -84,7 +84,8 @@ namespace Circle {
     circle: Circle,
     disableCircleCollision: boolean = false
   ): Circle => {
-    const collidingCircles = !disableCircleCollision && circles.filter(circleCollision(circle));
+    const collidingCircles =
+      !disableCircleCollision && circles.filter(circleCollision(circle));
 
     const collidesWithRightEdge =
       circle.position.x + circle.velocity.x > canvasWidth - circle.radius;

@@ -1,6 +1,6 @@
 # canvas-physics
 
-Implementation of some basic 2D collision logic using the HTML canvas API with Svelte.
+Implementation of some basic 2D collision physics using the HTML canvas API with Svelte.
 
 ### To run locally
 
