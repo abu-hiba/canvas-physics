@@ -25,6 +25,7 @@
 
       const drawCirclesOnCanvas = Circle.drawCircles(ctx);
 
+      ctx.beginPath();
       ctx.fillStyle = "white";
       ctx.fillRect(0, 0, $canvasWidth, $canvasWidth);
 

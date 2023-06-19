@@ -32,8 +32,9 @@ namespace Circle {
     (ctx: CanvasRenderingContext2D) =>
     ({ position, radius, colour }: Circle) => {
       ctx.save();
-
       const path = new Path2D();
+
+      ctx.beginPath();
       ctx.fillStyle = colour;
       path.arc(position.x, position.y, radius, 0, 2 * Math.PI);
       ctx.fill(path);
