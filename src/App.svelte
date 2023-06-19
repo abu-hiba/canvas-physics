@@ -9,7 +9,7 @@
     numCircles,
     disableCollisions,
   } from "./lib/store";
-  import Circle from "./lib/circle";
+  import * as Circle from "./lib/circle";
   import Controls from "./lib/Controls.svelte";
 
   let canvas: HTMLCanvasElement;
