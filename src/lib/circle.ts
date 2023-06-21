@@ -1,30 +1,30 @@
 import * as Physics from './physics';
 
-export type Circle = {
+export interface Circle {
   position: Physics.Point;
   radius: number;
   velocity: Physics.Velocity;
   mass: number;
   colour: string;
+  reactsOnCollision: boolean;
+  isColliding: boolean;
 };
 
-type Create = (
+export const create = (
   position: Physics.Point,
   radius: number,
-  velocity?: Physics.Velocity,
-  colour?: string
-) => Circle;
-export const create: Create = (
-  position,
-  radius,
-  velocity = { x: 0, y: 0 },
-  colour = 'rgba(29, 0, 255, 0.5)'
-) => ({
+  velocity: Physics.Velocity = { x: 0, y: 0 },
+  colour: string = 'rgba(29, 0, 255, 0.5)',
+  reactsOnCollision: boolean = true,
+  isColliding: boolean = false,
+): Circle => ({
   position,
   radius,
   velocity,
   mass: Math.PI * radius ** 2, // mass is proportional to area
   colour,
+  reactsOnCollision,
+  isColliding,
 });
 
 export const draw =
@@ -51,7 +51,10 @@ export const circleCollision =
       const xLength = Math.abs(circle1.position.x - circle2.position.x);
       const distance = Math.sqrt(Math.pow(yLength, 2) + Math.pow(xLength, 2));
 
-      return distance <= circle1.radius + circle2.radius;
+      const isColliding = distance <= circle1.radius + circle2.radius;
+      circle1.isColliding = isColliding;
+      circle2.isColliding = isColliding;
+      return isColliding;
     };
 
 const velocityAfterCollision = (c1: Circle, c2: Circle): Physics.Velocity => {
@@ -131,7 +134,7 @@ export const drawCircles =
     (circles: Circle[]): Path2D[] =>
       circles.map(draw(ctx));
 
-type RenderCirclesParams = {
+interface RenderCirclesParams {
   context: CanvasRenderingContext2D;
   minRadius: number;
   maxRadius: number;

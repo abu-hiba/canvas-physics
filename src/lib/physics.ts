@@ -1,4 +1,4 @@
-type Vector = {
+interface Vector {
   x: number;
   y: number;
 };
