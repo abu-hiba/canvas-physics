@@ -1,7 +1,15 @@
 <script lang="ts">
   import Slider from './Slider.svelte';
   import Checkbox from './Checkbox.svelte';
-  import { canvasWidth, canvasHeight, maxSpeed, minRadius, maxRadius, numCircles, disableCollisions } from './store';
+  import {
+      canvasWidth,
+      canvasHeight,
+      maxSpeed,
+      minRadius,
+      maxRadius,
+      numCircles,
+      disableCollisions
+  } from './store';
   import { lower } from './utils';
 
   export let isRunning: boolean;
