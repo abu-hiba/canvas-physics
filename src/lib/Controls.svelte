@@ -46,7 +46,7 @@
     label="Minimum radius"
     bind:value={$minRadius}
     min={5}
-    max={Math.floor(lower($canvasWidth, $canvasHeight) / 10)}
+    max={Math.floor(lower($canvasWidth, $canvasHeight) / 20)}
     disabled={isRunning}
   />
 
@@ -54,7 +54,7 @@
     label="Maximum radius"
     bind:value={$maxRadius}
     min={5}
-    max={Math.floor(lower($canvasWidth, $canvasHeight) / 10)}
+    max={Math.floor(lower($canvasWidth, $canvasHeight) / 20)}
     disabled={isRunning}
   />
 
